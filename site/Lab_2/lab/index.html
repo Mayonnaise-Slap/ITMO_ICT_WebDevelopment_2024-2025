@@ -122,27 +122,31 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">Модель данных</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">Скриншоты результата</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">Модель данных</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_5" class="nav-link">Запуск</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_10" class="nav-link">Запуск</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">Первый запуск</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_11" class="nav-link">Первый запуск</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">Дальнейшие запуски</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_12" class="nav-link">Дальнейшие запуски</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_8" class="nav-link">Векторы доработки</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_13" class="nav-link">Векторы доработки</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -193,21 +197,47 @@
 /about  # задание
 </code></pre>
 
-<h2 id="_4">Модель данных<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><img alt="IDEF1X.png" src="../IDEF1X.png" /></p>
-<h1 id="_5">Запуск<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
-<h2 id="_6">Первый запуск<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_4">Скриншоты результата<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">Домашняя страница<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Видно, как используется адаптивный веб дизайн с применением bootstrap. Также 
+реализована функция аккаунтов, отображается информация о вас как пользователе.</p>
+<p><img alt="photo_2024-10-14 17.17.43.jpeg" src="../media/photo_2024-10-14%2017.17.43.jpeg" /></p>
+<h3 id="_6">Страница с заданиями<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>При помощи ListView мы получаем список заданий, которые привязаны к классу аккаунта 
+пользователя. Например задание для класса 10А не будет отображаться у пользователя 
+VasyaPupkin из 11B. </p>
+<p><img alt="photo_2024-10-14 17.17.44.jpeg" src="../media/photo_2024-10-14%2017.17.44.jpeg" /></p>
+<h3 id="_7">Описание проекта<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><img alt="photo_2024-10-14 17.17.45.jpeg" src="../media/photo_2024-10-14%2017.17.45.jpeg" /></p>
+<h3 id="_8">Админ панель<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Пример вида админ панели у администратора/учителя</p>
+<p><img alt="photo_2024-10-14 17.17.46.jpeg" src="../media/photo_2024-10-14%2017.17.46.jpeg" /></p>
+<p><strong>Раздел tasks</strong>
+Админ панель прячет некоторые поля от учителя и автоматически подставляет данные. 
+Например, дата выдачи и "кем выдано" определяется автоматически.</p>
+<p><img alt="photo_2024-10-14 17.17.47.jpeg" src="../media/photo_2024-10-14%2017.17.47.jpeg" /></p>
+<p><strong>Раздел assignments</strong><br />
+Демонстрирует ответы на задания, которые были созданы с аккаунта текущего пользователя 
+админ-панели. Отображается исходное задание, информация о наказаниях за просрочку, текст 
+и имя студента автора сданного задания</p>
+<p><strong>Раздел students</strong><br />
+Необходим только после регистрации нового студента. Администратор вручную должен 
+определить каждый новый аккаунт к конкретному классу</p>
+<h2 id="_9">Модель данных<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><img alt="IDEF1X.png" src="../media/IDEF1X.png" /></p>
+<h1 id="_10">Запуск<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<h2 id="_11">Первый запуск<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <pre class="codehilite"><code class="language-zsh">pip install -r requirements.txt
 docker run --name pg-container -e POSTGRES_PASSWORD=notsecred -d -p 5432:5432 postgres
 python manage.py runserver localhost:8000
 </code></pre>
 
-<h2 id="_7">Дальнейшие запуски<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_12">Дальнейшие запуски<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <pre class="codehilite"><code class="language-zsh">docker start postgres-container
 python manage.py runserver localhost:8000
 </code></pre>
 
-<h1 id="_8">Векторы доработки<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h1 id="_13">Векторы доработки<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Переделать работу с шаблонами, чтобы не зависеть от контекста</li>
 <li>Вынести логику регистрации и входа в отдельное приложение</li>
