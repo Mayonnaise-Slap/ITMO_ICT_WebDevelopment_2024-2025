@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Task 3 - Samsonov Alexadnder</title>
+        <title>practical_works - Samsonov Alexadnder</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -38,27 +38,27 @@
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lab 1</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lab 1</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../task_1/" class="dropdown-item">Task 1</a>
+    <a href="../../Lab_1/task_1/" class="dropdown-item">Task 1</a>
 </li>
                                     
 <li>
-    <a href="../task_2/" class="dropdown-item">Task 2</a>
+    <a href="../../Lab_1/task_2/" class="dropdown-item">Task 2</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Task 3</a>
+    <a href="../../Lab_1/task_3/" class="dropdown-item">Task 3</a>
 </li>
                                     
 <li>
-    <a href="../task_4/" class="dropdown-item">Task 4</a>
+    <a href="../../Lab_1/task_4/" class="dropdown-item">Task 4</a>
 </li>
                                     
 <li>
-    <a href="../task_5/" class="dropdown-item">Task 5</a>
+    <a href="../../Lab_1/task_5/" class="dropdown-item">Task 5</a>
 </li>
                                 </ul>
                             </li>
@@ -76,15 +76,15 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lab 3</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lab 3</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Lab_3/pw/" class="dropdown-item">practical_works</a>
+    <a href="./" class="dropdown-item active" aria-current="page">practical_works</a>
 </li>
                                     
 <li>
-    <a href="../../Lab_3/lab/" class="dropdown-item">lab</a>
+    <a href="../lab/" class="dropdown-item">lab</a>
 </li>
                                 </ul>
                             </li>
@@ -97,12 +97,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../task_2/" class="nav-link">
+                                <a rel="prev" href="../../Lab_2/lab/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../task_4/" class="nav-link">
+                                <a rel="next" href="../lab/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -124,20 +124,30 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#3" class="nav-link">Задание 3</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">Текст задачи</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">Задача</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">Листинг кода</a>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_2" class="nav-link">Ход работы</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">Задача 1</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">Детализация</a>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">Задача 2</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">Задача 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_3" class="nav-link">Выводы</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -145,51 +155,71 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="3">Задание 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
-<h2 id="_1">Текст задачи<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ
-клиент получает http-сообщение, содержащее html-страницу, которую сервер
-подгружает из файла index.html.</p>
-<p>Обязательно использовать библиотеку <strong>socket</strong></p>
-<h2 id="_2">Листинг кода<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<pre class="codehilite"><code class="language-python">from socket import socket, AF_INET, SOCK_STREAM
-
-
-def html_server(socket_address: tuple[str, int] = ('localhost', 12345)):
-    server = socket(AF_INET, SOCK_STREAM)
-    server.bind(socket_address)
-    server.listen(5)
-
-    print(f'Started listening on {socket_address}')
-    print(f'to see the result, go to http://{socket_address[0]}:{socket_address[1]}')
-
-    standard_headers = [
-        'HTTP/1.1 200 OK\r\n',
-        'Content-Type: text/html; charset=utf-8\r\n',
-        '\r\n'
-    ]
-
-    while True:
-        try:
-            with open('index.html', 'r') as f:
-                html = f.read()
-            client_socket, client_address = server.accept()
-            print(f'Connected from {client_address}')
-            client_socket.recv(1024)
-            client_socket.send(encode_args(*standard_headers, *html))  # helper function
-        except KeyboardInterrupt:
-            print('shutting down')
-            server.close()
-            return
-
-
-if __name__ == '__main__':
-    html_server()
+<h1 id="_1">Задача<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Овладеть практическими навыками реализации серверной части (backend) приложений средствами
+Django REST framework.</p>
+<p>1) получить представление о работе с запросами в Django ORM.
+2) получить представление об использовании возможностей работы контроллеров и
+   сериализаторов в Django Rest Framework.
+3) овладеть навыками написания документации к API.</p>
+<h1 id="_2">Ход работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h2 id="1">Задача 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<pre class="codehilite"><code class="language-python">'Вывод даты выдачи самого старшего водительского удостоверения'
+&gt;&gt;&gt; from django.db.models import Min, Max
+&gt;&gt;&gt; Drivers_license.objects.aggregate(Min('date_issued'))
+{'date_issued__min': datetime.date(2011, 11, 11)}
 </code></pre>
 
-<h2 id="_3">Детализация<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>То же самое, что и с простым tcp соединением, но требуется отправить http header'ы, 
-чтобы браузер рендерил html</p></div>
+<pre class="codehilite"><code class="language-python">'Укажите самую позднюю дату владения машиной, имеющую какую-то из существующих моделей в вашей базе'
+def get_last_owned_date(car):
+    latest_dt_info = (
+        Owns.objects.filter(car_id=car)
+        .values('car_id')
+        .annotate(latest_dt_from_owned=Max('begin_date'))
+        .values('latest_dt_from_owned')
+    )
+    return latest_dt_info
+
+&gt;&gt;&gt; given_car = Car.objects.filter(model='bolt')
+&gt;&gt;&gt; for i in given_car:
+    print(get_last_owned_date(i))
+
+&lt; QuerySet[{'latest_dt_from_owned': datetime.date(2024, 11, 11)}]&gt;
+&lt; QuerySet[{'latest_dt_from_owned': datetime.date(2021, 11, 11)}]&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-python">'Выведите количество машин для каждого водителя'
+&gt;&gt; from django.db.models import Min, Max, Count
+&gt;&gt; Owns.objects.filter(end_date__isnull=True)
+.values('owner_id')
+.annotate(Count('car_id'))
+&lt; QuerySet[{'owner_id': 1, 'car_id__count': 1}, {'owner_id': 2, 'car_id__count': 2}] &gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-python">'Подсчитайте количество машин каждой марки'
+&gt;&gt; Car.objects.values('brand').annotate(Count('id'))
+&lt; QuerySet[{'brand': 'ford', 'id__count': 3}, {'brand': 'tesla', 'id__count': 1}, {
+    'brand': 'torvalds', 'id__count': 1}, {'brand': 'valve', 'id__count': 1}] &gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-python">'Отсортируйте всех автовладельцев по дате выдачи удостоверения'
+&gt;&gt; Owner.objects.filter(id__in=Drivers_license.objects.values_list('owner', flat=True)
+                          .distinct()
+                          ).order_by('drivers_license__date_issued')
+&lt; QuerySet[ &lt;Owner: Ownerobject(5)&gt;, &lt;Owner: Owner object(2)&gt;, &lt;Owner: Owner object(1)&gt;] &gt;
+</code></pre>
+
+<h2 id="2">Задача 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>Я реализовал весь требуемый функционал при помощи средств django-rest-api. Встроенные 
+модули позволили быстро объявить и настроить проект. Я использовал возможности generic 
+модулей для инициализации пользовательского взаимодействия с API</p>
+<h2 id="3">Задача 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>Так как мы уже знакомы с форматированием md файлов и работай с mcdocs это не вызвало 
+проблем. Для имплементации swagger я последовал инструкциям из практики и сразу 
+получил результат. </p>
+<h1 id="_3">Выводы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>Я научился работать с djangoORM, создавать простые api при помощи django-rest-api и 
+документировать их при помощи swagger</p></div>
             </div>
         </div>
 
