@@ -1,5 +1,5 @@
 theme:
-    name: bootstrap
+  name: bootstrap
 site_name: Samsonov Alexadnder
 
 nav:
@@ -16,6 +16,9 @@ nav:
   - Lab 3:
       - practical_works: ./Lab_3/pw.md
       - lab: ./Lab_3/lab.md
+  - Lab 4:
+      - practical_works: ./Lab_4/pw.md
+      - lab: ./Lab_4/lab.md
 markdown_extensions:
   - admonition
   - codehilite
